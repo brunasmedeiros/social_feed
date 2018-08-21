@@ -1,0 +1,32 @@
+<%= form_with(model: controller, local: true) do |form| %>
+  <% if controller.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(controller.errors.count, "error") %> prohibited this controller from being saved:</h2>
+
+      <ul>
+      <% controller.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :StaticPages %>
+    <%= form.text_field :StaticPages %>
+  </div>
+
+  <div class="field">
+    <%= form.label :home %>
+    <%= form.text_field :home %>
+  </div>
+
+  <div class="field">
+    <%= form.label :help %>
+    <%= form.text_field :help %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
